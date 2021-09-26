@@ -21,7 +21,6 @@ const ul=document.querySelector('#navbar__list');
 
 for (let i=0;i<sections.length;i++){
  const a =document.createElement('a');
- a.href=`#${sections[i].id}`;
  a.classList='menu__link';
  a.innerHTML=sections[i].dataset.nav;
  
@@ -32,6 +31,22 @@ for (let i=0;i<sections.length;i++){
  li.appendChild(a);
  ul.appendChild(li);
 }
+
+// Making the sectionInView behave Smoth while viewing
+
+const list =document.getElementsByTagName("LI");
+for (let i=0;i<list.length;i++)
+    {
+   
+    const l =document.querySelector(`.${list[i].className}`);
+    l.addEventListener('click',()=>{
+        
+        const sectionInView =document.getElementById(list[i].className.toLowerCase());
+        console.log(sectionInView.id);
+        sectionInView.scrollIntoView({behavior:"smooth"});
+    })
+} ;
+
 
 // view animation on the viewedSection 
 document.addEventListener('scroll', ()=>{
@@ -55,6 +70,8 @@ for (let i=0 ; i<sections.length ; i++ ){
 })
 
 });
+
+
 
 
 
