@@ -1,4 +1,4 @@
-  
+
 // checking if the section in the viewPort or not 
 
 function isViewedSection ()
@@ -42,8 +42,18 @@ for (let i=0;i<list.length;i++)
     l.addEventListener('click',()=>{
         
         const sectionInView =document.getElementById(list[i].className.toLowerCase());
+        
+       
         console.log(sectionInView.id);
         sectionInView.scrollIntoView({behavior:"smooth"});
+            
+        const y=window.innerWidth;
+        console.log(y);
+        if(window.innerWidth<=500) {
+        setTimeout(()=>{scrollTo( 0,window.scrollY-250)},700);
+        }
+       
+       
     })
 } ;
 
@@ -70,6 +80,12 @@ for (let i=0 ; i<sections.length ; i++ ){
 })
 
 });
+
+
+
+
+
+
 
 
 
