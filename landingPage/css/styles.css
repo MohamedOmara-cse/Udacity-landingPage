@@ -73,15 +73,7 @@ section {
 .navbar__menu li {
     display: inline-block;
 }
-@media screen and (max-width:500px){
-    .navbar__menu li{
-        display:inline ;
-    
-    }
-    a{
-        text-align: center;
-    }
-     }
+
 .navbar__menu .menu__link {
     display: block;
     padding: 1em;
